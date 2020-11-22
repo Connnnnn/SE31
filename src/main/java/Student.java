@@ -21,7 +21,6 @@ public class Student {
         this.modules = modules;
     }
 
-
     public String getName() {
         return Name;
     }
@@ -84,5 +83,25 @@ public class Student {
         this.modules = modules;
     }
 
+    public void addCourse(Course c){
+        if (this.courses.contains(c)){
+            return;
+        }
+        else{
+            this.courses.add(c);
+        }
+    }
 
+    public void addStudentToModule(Student s,Modules m){
+        if (m.getStudents().contains(s)) {
+            return;
+        }
+        else{
+            s.modules.add(m);
+            m.addStudent(s,m);
+            return;
+        }
+
+
+    }
 }

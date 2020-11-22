@@ -8,10 +8,10 @@ public class Course {
     private String courseName;
     private ArrayList<Modules> modules;
     private ArrayList<Student> studentsEnrolled;
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private DateTime startDate;
+    private DateTime endDate;
 
-    public Course(String courseName, ArrayList<Modules> modules, ArrayList<Student> studentsEnrolled, LocalDate startDate, LocalDate endDate) {
+    public Course(String courseName, ArrayList<Modules> modules, ArrayList<Student> studentsEnrolled, DateTime startDate, DateTime endDate) {
         this.courseName = courseName;
         this.modules = modules;
         this.studentsEnrolled = studentsEnrolled;
@@ -43,19 +43,42 @@ public class Course {
         this.studentsEnrolled = studentsEnrolled;
     }
 
-    public LocalDate getStartDate() {
+    public DateTime getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDate startDate) {
+    public void setStartDate(DateTime startDate) {
         this.startDate = startDate;
     }
 
-    public LocalDate getEndDate() {
+    public DateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDate endDate) {
+    public void setEndDate(DateTime endDate) {
         this.endDate = endDate;
+    }
+
+    public void AddStudentToCourse(Student s,Course c){
+
+        if(this.studentsEnrolled.contains(s)){
+            return;
+        }
+        else
+            this.studentsEnrolled.add(s);
+        s.addCourse(c);
+
+    }
+    public void AddModuleToCourse(Modules m,Course c){
+        if (this.modules.contains(m)){
+            return;
+        }else
+
+            modules.add(m);
+        for(Student studentInModule : m.getStudents()){
+            this.AddStudentToCourse(studentInModule,c);
+            return;
+        }
+
     }
 }
