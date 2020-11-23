@@ -1,0 +1,20 @@
+type: SE31_runCI
+steps:
+  - IN: SE31_ciRepo
+language: java
+jdk:
+  - 1.8
+
+branches:
+  only:
+    - master
+
+build:
+  ci:
+    - mvn test
+    - mvn install
+
+otifications:
+  email:
+    recipients:
+      c.keaney@nuigalway.ie

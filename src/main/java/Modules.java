@@ -61,6 +61,7 @@ public class Modules {
         else{
             m.coursesAssociated.add(c);
             c.AddModuleToCourse(m, c);
+
         }
     }
 }
