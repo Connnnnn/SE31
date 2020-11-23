@@ -66,19 +66,20 @@ public class Course {
         }
         else
             this.studentsEnrolled.add(s);
+
         s.addCourse(c);
 
     }
-    public void AddModuleToCourse(Modules m,Course c){
-        if (this.modules.contains(m)){
+    public void AddModuleToCourse(Modules m,Course c) {
+        if (this.modules.contains(m)) {
             return;
-        }else
-
+        } else
             modules.add(m);
-        for(Student studentInModule : m.getStudents()){
-            this.AddStudentToCourse(studentInModule,c);
-            return;
-        }
 
+        for(Student stu : studentsEnrolled){
+            m.addStudent(stu,m);
+        }
     }
+
 }
+

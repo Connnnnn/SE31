@@ -89,6 +89,7 @@ public class Student {
         }
         else{
             this.courses.add(c);
+
         }
     }
 
