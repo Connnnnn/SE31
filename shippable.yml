@@ -3,7 +3,7 @@ steps:
   - IN: SE31_ciRepo
 language: java
 jdk:
-  - 1.8
+  - oraclejdk11
 
 branches:
   only:
