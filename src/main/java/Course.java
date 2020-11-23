@@ -64,8 +64,12 @@ public class Course {
         if(this.studentsEnrolled.contains(s)){
             return;
         }
-        else
+        else {
             this.studentsEnrolled.add(s);
+            for(Modules mod : modules){
+                s.addStudentToModule(s,mod);
+            }
+        }
 
         s.addCourse(c);
 
@@ -78,6 +82,7 @@ public class Course {
 
         for(Student stu : studentsEnrolled){
             m.addStudent(stu,m);
+
         }
     }
 

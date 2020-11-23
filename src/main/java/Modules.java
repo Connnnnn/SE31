@@ -52,6 +52,7 @@ public class Modules {
         }
         else{
             m.students.add(s);
+
         }
     }
     public void addModuleToCourse(Modules m,Course c){
