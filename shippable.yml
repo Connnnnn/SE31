@@ -10,11 +10,10 @@ branches:
     - master
 
 build:
-  ci:
-    - mvn test
-    - mvn install
+  on_sucess:
+    -mvn clean test
 
-otifications:
+notifications:
   email:
     recipients:
       c.keaney@nuigalway.ie
