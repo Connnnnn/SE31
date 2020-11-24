@@ -46,15 +46,14 @@ public class Modules {
         this.coursesAssociated = coursesAssociated;
     }
     public void addStudent(Student s,Modules m){
-
         if (m.getStudents().contains(s)){
             return;
         }
         else{
             m.students.add(s);
-
         }
     }
+
     public void addModuleToCourse(Modules m,Course c){
         if(c.getModules().contains(m)){
             return;

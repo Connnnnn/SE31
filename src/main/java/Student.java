@@ -93,7 +93,7 @@ public class Student {
         }
     }
 
-    public void addStudentToModule(Student s,Modules m){
+    public void addModulesToStudent(Student s,Modules m){
         if (m.getStudents().contains(s)) {
             return;
         }

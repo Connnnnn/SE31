@@ -66,14 +66,14 @@ public class Course {
         }
         else {
             this.studentsEnrolled.add(s);
+
             for(Modules mod : modules){
-                s.addStudentToModule(s,mod);
+                s.addModulesToStudent(s,mod);
             }
         }
-
         s.addCourse(c);
-
     }
+
     public void AddModuleToCourse(Modules m,Course c) {
         if (this.modules.contains(m)) {
             return;
@@ -81,8 +81,7 @@ public class Course {
             modules.add(m);
 
         for(Student stu : studentsEnrolled){
-            m.addStudent(stu,m);
-
+            stu.addModulesToStudent(stu,m);
         }
     }
 

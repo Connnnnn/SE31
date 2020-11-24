@@ -26,7 +26,7 @@ public class TestClass {
         }
         @Test
         public void testStudentToModule(){
-            testStudent.addStudentToModule(testStudent,testModule);
+            testStudent.addModulesToStudent(testStudent,testModule);
 
             assertEquals(1,testStudent.getModules().size());
             assertEquals(1,testModule.getStudents().size(),"testing");
